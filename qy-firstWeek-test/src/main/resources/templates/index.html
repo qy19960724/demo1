@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>全部信息</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<script type="text/javascript">
+    function saveBook() {
+        location.href = "save";
+    }
+
+</script>
+<body>
+<div>
+    <div style=" width: 800px;height: 200px;text-align: center;margin: auto;margin-top: 40px;">
+        <h1>商品信息显示</h1>
+        <table style="height: auto;width: 800px" cellspacing="5px">
+            <tr align="center" style="text-align: center">
+                <td colspan="7" align="center" style="text-align: center">
+                    <form action="index" method="post">
+                        按商品名称查询：<input th:value="${nameResult}" name="nameResult" type="text"><br/><br/>
+                        按商品描述查询：<input th:value="${detailResult}" name="detailResult" type="text"><br/><br/>
+                        <input type="submit" value="查询">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" align="right">
+                    <input type="button" value="增加" onclick="saveBook()">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center">商品编号</td>
+                <td style="text-align: center">商品名称</td>
+                <td style="text-align: center">商品定价</td>
+                <td style="text-align: center">商品描述</td>
+                <td style="text-align: center">商品图片</td>
+                <td style="text-align: center">生产日期</td>
+            </tr>
+            <tr style="text-align: center" th:each="b:${list}">
+                <td th:text="${b.id}"></td>
+                <td th:text="${b.name}"></td>
+                <td th:text="${b.price}"></td>
+                <td th:text="${b.detail}"></td>
+                <td th:text="${b.pic}"></td>
+                <td th:text="${b.createTime}"></td>
+                <td>
+                    <a th:href="@{delete(id=${b.id})}" type="button">删除</a>
+                    <a th:href="@{loadById(id=${b.id})}" type="button">修改</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

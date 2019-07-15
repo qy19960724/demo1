@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>增加信息</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <div style=" width: 600px;height: 200px;text-align: center;margin: auto;margin-top: 160px;">
+       <h1>增加商品</h1>
+        <form action="add" method="post">
+            商品名称:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"><br/><br/>
+            商品定价:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="price"><br/><br/>
+            商品描述:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="detail" ><br/><br/>
+            商品图片:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pic"><br/><br/>
+            生产日期:&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="createTime"><br/><br/>
+        <input type="submit" value="提交"/>
+        <input type="reset" value="取消" onclick="location.href='index'"/>
+       </form>
+    </div>
+</div>
+</body>
+</html>
